@@ -28,6 +28,10 @@ suffix = case RbConfig::CONFIG['host_os']
            'unknown'
          end
 
+if suffix == "linuxmint_19.2_amd64"
+  suffix = "ubuntu_18.04_amd64"
+end
+
 binary = "#{__FILE__}_#{suffix}"
 
 if File.exist?("#{binary}.gz") && !File.exist?(binary)
